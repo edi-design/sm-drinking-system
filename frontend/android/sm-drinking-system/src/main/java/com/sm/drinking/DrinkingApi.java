@@ -50,9 +50,9 @@ public class DrinkingApi extends RestApi
         byte[] image = null;
 
         Vector <Drink> drinks = new Vector<Drink>();
-        drinks.add(new Drink(1, 20, "Coca Cola", 10, 20, image));
-        drinks.add(new Drink(2, 20, "Club Mate", 5, 35, image));
-        drinks.add(new Drink(3, 12, "Wasser still", 54, 352, image));
+        drinks.add(new Drink(54491229, 20, "Coca Cola", 10, 20, image));
+        drinks.add(new Drink(4029764001807L, 20, "Club Mate", 5, 35, image));
+        drinks.add(new Drink(4015732007155L, 12, "Wasser still", 54, 352, image));
 
         return drinks;
 	}
@@ -63,7 +63,7 @@ public class DrinkingApi extends RestApi
      * @param count
      * @return
      */
-    public boolean checkoutDrink(int id, int count)
+    public boolean checkoutDrink(long id, int count)
     {
         return true;
     }
