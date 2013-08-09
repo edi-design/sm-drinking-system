@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sm-drinking-system/build/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/sm-drinking-system/build/source/buildConfig/buildConfig.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sm-drinking-system/src/main/main.iml" filepath="$PROJECT_DIR$/sm-drinking-system/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sm-drinking-system/build/source/r/r.iml" filepath="$PROJECT_DIR$/sm-drinking-system/build/source/r/r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sm-drinking-system/sm-drinking-system.iml" filepath="$PROJECT_DIR$/sm-drinking-system/sm-drinking-system.iml" />
     </modules>
   </component>
 </project>
