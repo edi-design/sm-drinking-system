@@ -116,7 +116,8 @@ public class DrinkingActivity extends Activity {
                 byte[] image = null;
                 for (int i=0; i< data.length(); i++)
                 {
-                    drinks.add(new Drink(54491229, 20, "Coca Cola", 10, 20, image));
+                    //JSONArray inner = data.getJSONArray(i);
+                    drinks.add(new Drink(1, 20, "Coca Cola", 10, 20, image));
                     drinks.add(new Drink(4029764001807L, 20, "Club Mate", 5, 35, image));
                     drinks.add(new Drink(4015732007155L, 12, "Wasser still", 54, 352, image));
                 }

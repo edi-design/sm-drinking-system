@@ -39,11 +39,20 @@ public class DrinkingApi extends RestApi
         this.rest.setHost("seo-drink-pi");
         this.rest.setPort(3000);
         this.setUserAgent("android");
+        http://dev.edi-design.net/sm.php
         */
 
+        /* dev jens
         this.BASE_URL = "http://10.0.101.186:3000/";
         this.rest.setHost("10.0.101.186");
         this.rest.setPort(3000);
+        this.setUserAgent("android");
+        this.rest.setSsl(false);
+        */
+
+        this.BASE_URL = "http://dev.edi-design.net/";
+        this.rest.setHost("dev.edi-design.net");
+        this.rest.setPort(80);
         this.setUserAgent("android");
         this.rest.setSsl(false);
 
@@ -59,7 +68,8 @@ public class DrinkingApi extends RestApi
      */
 	public void getDrinks()
 	{
-        this.get("drinks/get");
+        // this.get("drinks/get");
+        this.get("sm.php");
 	}
 
     /**
