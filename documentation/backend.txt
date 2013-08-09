@@ -1,3 +1,9 @@
 ruby 1.9.3p0 (2011-10-30 revision 33570) [x86_64-linux]
 
 Rails 4.0.0
+
+
+mysql
+host=10.0.101.169
+user=root
+pw=HausMaus
