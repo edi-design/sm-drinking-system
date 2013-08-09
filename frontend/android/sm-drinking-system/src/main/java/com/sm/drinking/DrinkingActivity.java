@@ -1,14 +1,23 @@
 package com.sm.drinking;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.manavo.rest.RestCallback;
 import com.sm.drinking.util.SystemUiHider;
+
+import org.json.JSONArray;
 
 import java.util.Vector;
 
@@ -59,16 +68,72 @@ public class DrinkingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        drinks = new Vector<DrinkContainer>();
+
 
         setContentView(R.layout.activity_drinking);
 
+        this.getDrinks();
+
+        //logoImage.setImageBitmap(BitmapFactory.decodeByteArray(currentAccount.accImage, 0, this.accImage.length));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.about:
+                Context context = getApplicationContext();
+                CharSequence text = "best team ever!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                return true;
+            case R.id.reload:
+                this.getDrinks();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void getDrinks()
+    {
         this.api = new DrinkingApi(this);
 
+        this.api.setCallback(new RestCallback() {
+            public void success(Object obj) {
+                JSONArray data = (JSONArray)obj;
+
+                Vector <Drink> drinks = new Vector<Drink>();
+                byte[] image = null;
+                for (int i=0; i< data.length(); i++)
+                {
+                    drinks.add(new Drink(54491229, 20, "Coca Cola", 10, 20, image));
+                    drinks.add(new Drink(4029764001807L, 20, "Club Mate", 5, 35, image));
+                    drinks.add(new Drink(4015732007155L, 12, "Wasser still", 54, 352, image));
+                }
+
+                renderDrinks(drinks);
+            }
+        });
+        this.api.getDrinks();
+    }
+
+    public void renderDrinks(Vector<Drink> returned_drinks)
+    {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         LinearLayout ll = (LinearLayout) findViewById(R.id.lines);
+        drinks = new Vector<DrinkContainer>();
 
-        for (final Drink d : api.getDrinks()) {
+        for (final Drink d : returned_drinks) {
             LinearLayout ll2 = new LinearLayout(this);
             ll2.setOrientation(LinearLayout.HORIZONTAL);
             //ll2.set
@@ -121,8 +186,6 @@ public class DrinkingActivity extends Activity {
                 }
             });
         }
-
-        //logoImage.setImageBitmap(BitmapFactory.decodeByteArray(currentAccount.accImage, 0, this.accImage.length));
     }
 
     public void performDrinkCheckout(Drink d, int amount, TextView current)

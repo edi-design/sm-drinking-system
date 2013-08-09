@@ -21,7 +21,7 @@ import java.util.Vector;
  */
 public class DrinkingApi extends RestApi
 {
-    private final String BASE_URL;
+    //protected String BASE_URL;
     Bitmap bmBef = null;
 
     /**
@@ -31,11 +31,23 @@ public class DrinkingApi extends RestApi
 	 */
 	public DrinkingApi(Activity activity)
 	{
-        //ApiTask ApiTask = new ApiTask(activity);
-		super(activity);
+        super(activity);
 
-		this.BASE_URL = "https://seo-drink-pi/backend/";
-		//this.urlSuffix = ".json";
+        /* live environment
+        this.BASE_URL = "https://seo-drink-pi/";
+        this.urlSuffix = ".json";
+        this.rest.setHost("seo-drink-pi");
+        this.rest.setPort(3000);
+        this.setUserAgent("android");
+        */
+
+        this.BASE_URL = "http://10.0.101.186:3000/";
+        this.rest.setHost("10.0.101.186");
+        this.rest.setPort(3000);
+        this.setUserAgent("android");
+        this.rest.setSsl(false);
+
+        //this.acceptAllSslCertificates();
 	}
 
     /**
@@ -45,16 +57,9 @@ public class DrinkingApi extends RestApi
      * - count
      * @return
      */
-	public Vector<Drink> getDrinks()
+	public void getDrinks()
 	{
-        byte[] image = null;
-
-        Vector <Drink> drinks = new Vector<Drink>();
-        drinks.add(new Drink(54491229, 20, "Coca Cola", 10, 20, image));
-        drinks.add(new Drink(4029764001807L, 20, "Club Mate", 5, 35, image));
-        drinks.add(new Drink(4015732007155L, 12, "Wasser still", 54, 352, image));
-
-        return drinks;
+        this.get("drinks/get");
 	}
 
     /**

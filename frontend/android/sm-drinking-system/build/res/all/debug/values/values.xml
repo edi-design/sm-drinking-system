@@ -11,12 +11,15 @@
     <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/ids.xml -->
     <item name="button_water_still" type="id"/>
     <item name="lines" type="id"/>
+    <item name="state" type="id"/>
     <item name="water_still_current" type="id"/>
     <item name="water_still_total" type="id"/>
     <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/strings.xml -->
+    <string name="about">about</string>
     <string name="app_name">Searchmetrics Drinking System</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="reload">reload</string>
     <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
