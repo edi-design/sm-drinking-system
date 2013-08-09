@@ -1,1 +1,24 @@
 http://guides.rubyonrails.org/getting_started.html#hello-rails-bang
+
+git clone https://github.com/edi-design/sm-drinking-system
+cd sm-drinking-system
+
+# create a new project with name "backend"
+rails new backend
+
+# go to "Gemfile" in root folder and add/uncomment this line
+gem 'therubyracer', platforms: :ruby
+
+## start server
+cd backend
+sudo rails server
+http://localhost:3000
+CTRL+C
+
+sudo rails generate controller getDrinks index
+
+sudo rails server
+http://localhost:3000/get_drinks/index
+
+sudo rails destroy controller getDrinks index
+
