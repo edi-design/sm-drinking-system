@@ -4,9 +4,27 @@ package com.sm.drinking;
  * Created by andre on 09.08.13.
  */
 public class Drink {
+    private int id;
     private String name;
+    private int storage_amount;
     private int current;
     private int total;
+
+    public int getStorageAmount() {
+        return storage_amount;
+    }
+
+    public void setStorageAmount(int storage_amount) {
+        this.storage_amount = storage_amount;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public byte[] getImage() {
         return image;
@@ -42,7 +60,9 @@ public class Drink {
         this.total = total;
     }
 
-    public Drink(String name, int current, int total, byte[] image) {
+    public Drink(int id, int storage_amount, String name, int current, int total, byte[] image) {
+        this.id = id;
+        this.storage_amount = storage_amount;
         this.name = name;
         this.current = current;
         this.total = total;

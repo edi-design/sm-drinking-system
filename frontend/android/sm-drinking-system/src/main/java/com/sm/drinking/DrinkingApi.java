@@ -50,9 +50,9 @@ public class DrinkingApi extends RestApi
         byte[] image = null;
 
         Vector <Drink> drinks = new Vector<Drink>();
-        drinks.add(new Drink("Coca Cola", 10, 20, image));
-        drinks.add(new Drink("Club Mate", 5, 35, image));
-        drinks.add(new Drink("Wasser still", 54, 352, image));
+        drinks.add(new Drink(1, 20, "Coca Cola", 10, 20, image));
+        drinks.add(new Drink(2, 20, "Club Mate", 5, 35, image));
+        drinks.add(new Drink(3, 12, "Wasser still", 54, 352, image));
 
         return drinks;
 	}
