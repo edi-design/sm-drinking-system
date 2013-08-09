@@ -8,6 +8,16 @@ public class Drink {
     private int current;
     private int total;
 
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    private byte[] image;
+
     public String getName() {
         return name;
     }
@@ -32,9 +42,10 @@ public class Drink {
         this.total = total;
     }
 
-    public Drink(String name, int current, int total) {
+    public Drink(String name, int current, int total, byte[] image) {
         this.name = name;
         this.current = current;
         this.total = total;
+        this.image = image;
     }
 }

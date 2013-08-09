@@ -1,9 +1,14 @@
 package com.sm.drinking;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
 
 import com.manavo.rest.RestApi;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Vector;
 
 /**
@@ -14,9 +19,10 @@ import java.util.Vector;
  * This calls provides all methods provided by the tt-rss api
  * and returns usuable objects
  */
-public class DrinkingApi
+public class DrinkingApi extends RestApi
 {
     private final String BASE_URL;
+    Bitmap bmBef = null;
 
     /**
 	 * constructor
@@ -26,7 +32,7 @@ public class DrinkingApi
 	public DrinkingApi(Activity activity)
 	{
         //ApiTask ApiTask = new ApiTask(activity);
-		// super(activity);
+		super(activity);
 
 		this.BASE_URL = "https://seo-drink-pi/backend/";
 		//this.urlSuffix = ".json";
@@ -40,9 +46,12 @@ public class DrinkingApi
      */
 	public Vector<Drink> getDrinks()
 	{
+        byte[] image = null;
+
         Vector <Drink> drinks = new Vector<Drink>();
-        drinks.add(new Drink("Coca Cola", 10, 20));
-        drinks.add(new Drink("Club Mate", 5, 35));
+        drinks.add(new Drink("Coca Cola", 10, 20, image));
+        drinks.add(new Drink("Club Mate", 5, 35, image));
+        drinks.add(new Drink("Wasser still", 54, 352, image));
 
         return drinks;
 	}
