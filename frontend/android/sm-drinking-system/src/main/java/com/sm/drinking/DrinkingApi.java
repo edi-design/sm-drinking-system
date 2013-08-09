@@ -38,11 +38,12 @@ public class DrinkingApi extends RestApi
 		//this.urlSuffix = ".json";
 	}
 
-	/**
+    /**
      * call to get all drinks
      * - name (id)
      * - picture
      * - count
+     * @return
      */
 	public Vector<Drink> getDrinks()
 	{
@@ -55,6 +56,17 @@ public class DrinkingApi extends RestApi
 
         return drinks;
 	}
+
+    /**
+     * send post request to backend that a drink was checked out
+     * @param id
+     * @param count
+     * @return
+     */
+    public boolean checkoutDrink(int id, int count)
+    {
+        return true;
+    }
 
 
 }
