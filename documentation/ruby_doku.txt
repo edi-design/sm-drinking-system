@@ -1,1 +1,10 @@
 http://guides.rubyonrails.org/getting_started.html#hello-rails-bang
+
+git clone https://github.com/edi-design/sm-drinking-system
+cd sm-drinking-system
+
+# create a new project with name "backend"
+rails new backend
+
+cd backend
+
