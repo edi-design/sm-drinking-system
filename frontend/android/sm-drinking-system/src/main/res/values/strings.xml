@@ -6,5 +6,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="reload">reload</string>
     <string name="about">about</string>
+    <string name="status">Status:</string>
 
 </resources>

@@ -8,6 +8,8 @@
         <attr name="buttonBarStyle" format="reference" />
         <attr name="buttonBarButtonStyle" format="reference" />
     </declare-styleable>
+    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/dimens.xml -->
+    <dimen name="frame_padding">60dp</dimen>
     <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/ids.xml -->
     <item name="button_water_still" type="id"/>
     <item name="lines" type="id"/>
@@ -20,6 +22,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="reload">reload</string>
+    <string name="status">Status:</string>
     <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

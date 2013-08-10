@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,8 +18,15 @@ import android.widget.Toast;
 import com.manavo.rest.RestCallback;
 import com.sm.drinking.util.SystemUiHider;
 
+import org.apache.http.util.ByteArrayBuffer;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Vector;
 
 /**
@@ -109,35 +117,36 @@ public class DrinkingActivity extends Activity {
         this.api = new DrinkingApi(this);
 
         this.api.setCallback(new RestCallback() {
-            public void success(Object obj) {
-                JSONArray data = (JSONArray)obj;
-
-                Vector <Drink> drinks = new Vector<Drink>();
-                byte[] image = null;
-                for (int i=0; i< data.length(); i++)
-                {
-                    //JSONArray inner = data.getJSONArray(i);
-                    drinks.add(new Drink(1, 20, "Coca Cola", 10, 20, image));
-                    drinks.add(new Drink(4029764001807L, 20, "Club Mate", 5, 35, image));
-                    drinks.add(new Drink(4015732007155L, 12, "Wasser still", 54, 352, image));
-                }
-
-                renderDrinks(drinks);
-            }
+            public void success(Object obj)
+			{
+				callRenderTask(obj);
+			}
         });
         this.api.getDrinks();
     }
 
+	private void callRenderTask(Object obj)
+	{
+		// open Render Task
+		new RenderTask(this).execute(obj);
+	}
+
+	/**
+	 * sets all drinks from api call to linear layout
+	 * @param returned_drinks
+	 */
     public void renderDrinks(Vector<Drink> returned_drinks)
     {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         LinearLayout ll = (LinearLayout) findViewById(R.id.lines);
+
+		// reset layout, so after reload there are only the loaded elements
+		ll.removeAllViewsInLayout();
         drinks = new Vector<DrinkContainer>();
 
         for (final Drink d : returned_drinks) {
             LinearLayout ll2 = new LinearLayout(this);
             ll2.setOrientation(LinearLayout.HORIZONTAL);
-            //ll2.set
 
             final Button reset = new Button(this);
             final Button logoImage = new Button(this);
