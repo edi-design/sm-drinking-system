@@ -20,14 +20,22 @@
             android:id="@id/state"
             android:layout_gravity="left|top"/>
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
             android:layout_gravity="center"
-            android:id="@id/lines"
-            android:paddingTop="@dimen/frame_padding">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
-    </LinearLayout>
+        <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/grid"
+                style="@style/AppTheme"
+                android:orientation="horizontal"
+                android:padding="5dp">
+        </GridLayout>
+    </ScrollView>
 
 </FrameLayout>

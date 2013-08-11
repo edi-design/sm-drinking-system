@@ -63,20 +63,7 @@ public class RenderTask extends AsyncTask<Object, Void, Vector<Drink>> {
 				long bar_code = e.getLong("bar_code");
 				int count = e.getInt("count");
 				int total = e.getInt("total");
-
-				URL imageUrl = new URL(e.getString("image_url"));
-				URLConnection ucon = imageUrl.openConnection();
-
-				InputStream is = ucon.getInputStream();
-				BufferedInputStream bis = new BufferedInputStream(is);
-
-				ByteArrayBuffer baf = new ByteArrayBuffer(500);
-				int current = 0;
-				while ((current = bis.read()) != -1) {
-					baf.append((byte) current);
-				}
-
-				byte[] image =  baf.toByteArray();
+				byte[] image =  getLogoImage(e.getString("image_url"));
 
 				drinks.add(new Drink(id, storage_amount, name, count, total, image));
 			}
@@ -95,6 +82,32 @@ public class RenderTask extends AsyncTask<Object, Void, Vector<Drink>> {
 
 		return drinks;
     }
+
+	/**
+	 * get image byte-array from url
+	 * @param url
+	 * @return
+	 */
+	private byte[] getLogoImage(String url){
+		try {
+			URL imageUrl = new URL(url);
+			URLConnection ucon = imageUrl.openConnection();
+
+			InputStream is = ucon.getInputStream();
+			BufferedInputStream bis = new BufferedInputStream(is);
+
+			ByteArrayBuffer baf = new ByteArrayBuffer(500);
+			int current = 0;
+			while ((current = bis.read()) != -1) {
+				baf.append((byte) current);
+			}
+
+			return baf.toByteArray();
+		} catch (Exception e) {
+			Log.d("ImageManager", "Error: " + e.toString());
+		}
+		return null;
+	}
 
     protected void onPostExecute(Vector<Drink> drinks)
 	{
