@@ -60,12 +60,12 @@ public class RenderTask extends AsyncTask<Object, Void, Vector<Drink>> {
 				String name = e.getString("name");
 				int milli_liter = e.getInt("milli_liter");
 				int storage_amount = e.getInt("storage_amount");
-				long bar_code = e.getLong("bar_code");
+				long bar_code = Long.parseLong(e.getString("bar_code"));
 				int count = e.getInt("count");
 				int total = e.getInt("total");
 				byte[] image =  getLogoImage(e.getString("image_url"));
 
-				drinks.add(new Drink(id, storage_amount, name, count, total, image));
+				drinks.add(new Drink(bar_code, storage_amount, name, count, total, image));
 			}
 			catch (Exception e)
 			{

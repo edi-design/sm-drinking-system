@@ -182,6 +182,8 @@ public class DrinkingActivity extends Activity {
 			final TextView tv_stock = new TextView(this);
 			final ImageButton img_drink = new ImageButton(this);
 
+			drinks.add(new DrinkContainer(d, btn_name));
+
 			/*
 			 * configure image of drink
 			 */

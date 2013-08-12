@@ -9,18 +9,10 @@ import android.widget.Button;
 public class DrinkContainer {
     Drink drink;
     Button buttonSingle;
-    Button buttonStorage;
-    Button reset;
-    TextView current;
-    TextView total;
 
-    public DrinkContainer(Drink drink, Button buttonSingle, Button buttonStorage, TextView current, TextView total, Button reset) {
+    public DrinkContainer(Drink drink, Button buttonSingle) {
         this.drink = drink;
         this.buttonSingle = buttonSingle;
-        this.buttonStorage = buttonStorage;
-        this.current = current;
-        this.total = total;
-        this.reset = reset;
     }
 
     public Drink getDrink() {
@@ -37,29 +29,5 @@ public class DrinkContainer {
 
     public void setButtonSingle(Button buttonSingle) {
         this.buttonSingle = buttonSingle;
-    }
-
-    public Button getButtonStorage() {
-        return buttonStorage;
-    }
-
-    public void setButtonStorage(Button buttonStorage) {
-        this.buttonStorage = buttonStorage;
-    }
-
-    public TextView getCurrent() {
-        return current;
-    }
-
-    public void setCurrent(TextView current) {
-        this.current = current;
-    }
-
-    public TextView getTotal() {
-        return total;
-    }
-
-    public void setTotal(TextView total) {
-        this.total = total;
     }
 }
