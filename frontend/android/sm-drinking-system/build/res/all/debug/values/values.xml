@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/colors.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/colors.xml -->
     <color name="black_overlay">#66000000</color>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/attrs.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/attrs.xml -->
     <declare-styleable name="ButtonBarContainerTheme">
         <attr name="buttonBarStyle" format="reference" />
         <attr name="buttonBarButtonStyle" format="reference" />
     </declare-styleable>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/dimens.xml -->
     <dimen name="frame_padding">60dp</dimen>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/ids.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/ids.xml -->
     <item name="button_water_still" type="id"/>
     <item name="grid" type="id"/>
     <item name="lines" type="id"/>
     <item name="state" type="id"/>
     <item name="water_still_current" type="id"/>
     <item name="water_still_total" type="id"/>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/integers.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/integers.xml -->
     <integer name="grid_column">2</integer>
     <integer name="grid_row">5</integer>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/strings.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/strings.xml -->
     <string name="about">About this App</string>
     <string name="app_name">Searchmetrics Drinking System</string>
     <string name="bottles">Flaschen</string>
-    <string name="divider">/</string>
+    <string name="divider"> / </string>
     <string name="not_found">Getränk nicht gefunden</string>
     <string name="put_back">zurück gelegt</string>
     <string name="reload">Reload Drink List</string>
     <string name="return_drink">Return Drink</string>
-    <string name="status">Status:</string>
+    <string name="status">Status: </string>
     <string name="stock_error">Fehlbestand ermittelt.</string>
     <string name="took">entnommen</string>
-    <!-- From: file:/Users/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/styles.xml -->
+    <!-- From: file:/Volumes/home/andre/projects/searchmetrics/sm-drinking-system/frontend/android/sm-drinking-system/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
